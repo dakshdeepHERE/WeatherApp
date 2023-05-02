@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import *
-from geopy.geocoders import Nominatim 
-from tkinter import ttk,messagebox 
+from geopy.geocoders import Nominatim
+from tkinter import ttk,messagebox
 from timezonefinder import TimezoneFinder
 from datetime import *
 import requests
@@ -30,13 +30,21 @@ def getWeather():
     current_time=local_time.strftime("%I:%M %p")
     clock.config(text=current_time)
     
-    #weather 
-    api="https://api.openweathermap.org/data/3.0/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=d04ad307d6e39ba6163857204910a8ff"
-    ##api = "https://api.openweathermap.org/data/2.5/onecall?lat={location.latitude}&lon={location.longitude}&units=metric&exclude={hourly}&appid={d04ad307d6e39ba6163857204910a8ff}"
-    json_data = requests.get (api) .json ()
+    #weather
+    api="https://api.openweathermap.org/data/2.5/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=d0e2abe3b961cc8ad356d61bbaa000f9"
+    json_data = requests.get (api).json ()
     #current
-    temp = json_data[' current ']['temp']
-    print(temp)
+    temp = json_data['current']['temp']
+    humidity = json_data['current']['humidity']
+    pressure = json_data['current']['pressure']
+    wind = json_data['current']['wind_speed']
+    description = json_data['current']['weather'][0]['description']
+    
+    t.config(text=(temp,"°C"))
+    h.config(text=(humidity,"%"))
+    p.config(text=(pressure,"hPa"))
+    w.config(text=(wind,"m/s"))
+    d.config(text=(description))
     
     
     
@@ -101,18 +109,29 @@ Label(frame,image=secondbox,bg="#212120").place(x=800,y=30)
 
 ###Clock in the left corner [Time will displayed here]
 
-clock=Label(root, font=("Helvetica" ,30, 'bold'),fg="white",bg="#57adff") 
+clock=Label(root, font=("Helvetica" ,30, 'bold'),fg="white",bg="#57adff")
 clock.place(x=30,y=20)
 
 
 
 ### Timezone
 
-timezone=Label(root, font=("Helvetica" ,20), fg="white",bg="#57adff") 
+timezone=Label(root, font=("Helvetica" ,20), fg="white",bg="#57adff")
 timezone.place(x=700, y=20)
 
-long_lat=Label(root, font=("Helvetica", 10), fg="white", bg="#57adff") 
+long_lat=Label(root, font=("Helvetica", 10), fg="white", bg="#57adff")
 long_lat.place(x=700, y=20)
 
+#thpwd
+t=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
+t.place(x=150,y=120)
+h=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
+h.place(x=150,y=140)
+p=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
+p.place(x=150,y=160)
+w=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
+w.place(x=150,y=180)
+d=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
+d.place(x=150,y=200)
 
 root.mainloop()
