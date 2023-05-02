@@ -45,8 +45,43 @@ def getWeather():
     p.config(text=(pressure,"hPa"))
     w.config(text=(wind,"m/s"))
     d.config(text=(description))
-    
-    
+
+    #first cell
+
+    #second cell
+
+    #third cell
+
+    #fourth cell
+
+    #fifth cell
+
+    #sixth cell
+
+    #seventh cell
+
+    #days
+
+    first = datetime.now()
+    day1.config(text=first.strftime("%A"))
+
+    second = first+timedelta(days=1)
+    day2.config(text=second.strftime("%A"))
+
+    third = first+timedelta(days=2)
+    day3.config(text=third.strftime("%A"))
+
+    fourth = first+timedelta(days=3)
+    day4.config(text=fourth.strftime("%A"))
+
+    fifth = first+timedelta(days=4)
+    day5.config(text=fifth.strftime("%A"))
+
+    sixth = first+timedelta(days=5)
+    day6.config(text=sixth.strftime("%A"))
+
+    seventh = first+timedelta(days=6)
+    day7.config(text=seventh.strftime("%A"))
     
 ## Icons Import
 image_icon = PhotoImage(file="Images/logo.png")
@@ -133,5 +168,54 @@ w=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
 w.place(x=150,y=180)
 d=Label(root,font=("Helvetica",11),fg="white",bg="#203243")
 d.place(x=150,y=200)
+
+#first cell
+firstframe=Frame(root,width=230,height=132,bg="#282829")
+firstframe.place(x=35,y=315)
+
+day1=Label(firstframe,font="arial 20",bg="#282829",fg="#fff")
+day1.place(x=100,y=5)
+
+#second cell
+secondframe=Frame(root,width=70,height=115,bg="#282829")
+secondframe.place(x=305,y=325)
+
+day2=Label(secondframe,bg="#282829",fg="#fff")
+day2.place(x=10,y=5)
+#third cell
+thirdframe=Frame(root,width=70,height=115,bg="#282829")
+thirdframe.place(x=405,y=325)
+
+day3=Label(thirdframe,bg="#282829",fg="#fff")
+day2.place(x=10,y=5)
+
+#fourth cell
+fourthframe=Frame(root,width=70,height=115,bg="#282829")
+fourthframe.place(x=505,y=325)
+
+day4=Label(fourthframe,bg="#282829",fg="#fff")
+day4.place(x=10,y=5)
+
+#fifth cell
+fifthframe=Frame(root,width=70,height=115,bg="#282829")
+fifthframe.place(x=605,y=325)
+
+day5=Label(fifthframe,bg="#282829",fg="#fff")
+day5.place(x=10,y=5)
+
+#sixth cell
+sixthframe=Frame(root,width=70,height=115,bg="#282829")
+sixthframe.place(x=705,y=325)
+
+day6=Label(sixthframe,bg="#282829",fg="#fff")
+day6.place(x=10,y=5)
+
+#seventh cell 
+seventhframe=Frame(root,width=70,height=115,bg="#282829")
+seventhframe.place(x=805,y=325)
+
+day7=Label(seventhframe,bg="#282829",fg="#fff")
+day7.place(x=10,y=5)
+
 
 root.mainloop()
