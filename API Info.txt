@@ -1,0 +1,4 @@
+api call  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+
+We will use openweathermap api in this project. Im using the free api for this project.
