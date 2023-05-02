@@ -49,41 +49,92 @@ def getWeather():
     #first cell
     firstdayimage= json_data['daily'][0]['weather'][0]['icon']
 
-    #second cell
-    seconddayimage= json_data['daily'][1]['weather'][0]['icon']
-
-    #third cell
-    thirddayimage= json_data['daily'][2]['weather'][0]['icon']
-
-    #fourth cell
-    fourthdayimage= json_data['daily'][3]['weather'][0]['icon']
-
-    #fifth cell
-    fifthdayimage= json_data['daily'][4]['weather'][0]['icon']
-
-    #sixth cell
-    sixthdayimage= json_data['daily'][5]['weather'][0]['icon']
-
-    #seventh cell
-    seventhdayimage= json_data['daily'][6]['weather'][0]['icon']
-
-    #days
-
-    first = datetime.now()
-    day1.config(text=first.strftime("%A"))
-
     photo1 = ImageTk.PhotoImage(file=f"icon/{firstdayimage}@2x.png")
     firstimage.config(image=photo1)
     firstimage.image=photo1
 
-    second = first+timedelta(days=1)
-    day2.config(text=second.strftime("%A"))
+    day1temp=Label(firstframe,bg="#282829",fg="#57adff",font="arial 15 bold")
+    day1temp.place(x=100,y=50)
+
+    #second cell
+    seconddayimage= json_data['daily'][1]['weather'][0]['icon']
 
     img=(Image.open(f"icon/{seconddayimage}@2x.png"))
     resized_image= img.resize((50,50))
     photo2 = ImageTk.PhotoImage(resized_image)
     secondimage.config(image=photo2)
     secondimage.image=photo2
+
+    day2temp=Label(secondframe,bg="#282829",fg="#fff")
+    day2temp.place(x=10,y=70)
+
+    #third cell
+    thirddayimage= json_data['daily'][2]['weather'][0]['icon']
+
+    img=(Image.open(f"icon/{thirddayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo3 = ImageTk.PhotoImage(resized_image)
+    thirdimage.config(image=photo3)
+    thirdimage.image=photo3
+
+    day3temp=Label(thirdframe,bg="#282829",fg="#fff")
+    day3temp.place(x=10,y=70)
+
+    #fourth cell
+    fourthdayimage= json_data['daily'][3]['weather'][0]['icon']
+
+    img=(Image.open(f"icon/{fourthdayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo4 = ImageTk.PhotoImage(resized_image)
+    fourthimage.config(image=photo4)
+    fourthimage.image=photo4
+
+    day4temp=Label(fourthframe,bg="#282829",fg="#fff")
+    day4temp.place(x=10,y=70)
+
+    #fifth cell
+    fifthdayimage= json_data['daily'][4]['weather'][0]['icon']
+
+    img=(Image.open(f"icon/{fifthdayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo5 = ImageTk.PhotoImage(resized_image)
+    fifthimage.config(image=photo5)
+    fifthimage.image=photo5
+
+    day5temp=Label(fifthframe,bg="#282829",fg="#fff")
+    day5temp.place(x=10,y=70)
+
+    #sixth cell
+    sixthdayimage= json_data['daily'][5]['weather'][0]['icon']
+
+    img=(Image.open(f"icon/{sixthdayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo6 = ImageTk.PhotoImage(resized_image)
+    sixthimage.config(image=photo6)
+    sixthimage.image=photo6
+
+    day6temp=Label(sixthframe,bg="#282829",fg="#fff")
+    day6temp.place(x=10,y=70)
+
+    #seventh cell
+    seventhdayimage= json_data['daily'][6]['weather'][0]['icon']
+
+    img=(Image.open(f"icon/{seventhdayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo7 = ImageTk.PhotoImage(resized_image)
+    seventhimage.config(image=photo7)
+    seventhimage.image=photo7
+
+    day7temp=Label(seventhframe,bg="#282829",fg="#fff")
+    day7temp.place(x=10,y=70)
+
+    #days
+
+    first = datetime.now()
+    day1.config(text=first.strftime("%A"))
+
+    second = first+timedelta(days=1)
+    day2.config(text=second.strftime("%A"))
 
     third = first+timedelta(days=2)
     day3.config(text=third.strftime("%A"))
