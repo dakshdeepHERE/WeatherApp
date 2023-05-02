@@ -56,6 +56,11 @@ def getWeather():
     day1temp=Label(firstframe,bg="#282829",fg="#57adff",font="arial 15 bold")
     day1temp.place(x=100,y=50)
 
+    tempday1 = json_data['daily'][0]['temp']['day']
+    tempnight1 = json_data['daily'][0]['temp']['night']
+
+    day1temp.config(text=f"Day Temp:{tempday1}\n Night Temp:{tempnight1}")
+
     #second cell
     seconddayimage= json_data['daily'][1]['weather'][0]['icon']
 
@@ -66,7 +71,12 @@ def getWeather():
     secondimage.image=photo2
 
     day2temp=Label(secondframe,bg="#282829",fg="#fff")
-    day2temp.place(x=10,y=70)
+    day2temp.place(x=2,y=70)
+
+    tempday2 = json_data['daily'][1]['temp']['day']
+    tempnight2 = json_data['daily'][1]['temp']['night']
+
+    day2temp.config(text=f"Day:{tempday2}\n Night:{tempnight2}")
 
     #third cell
     thirddayimage= json_data['daily'][2]['weather'][0]['icon']
@@ -78,7 +88,12 @@ def getWeather():
     thirdimage.image=photo3
 
     day3temp=Label(thirdframe,bg="#282829",fg="#fff")
-    day3temp.place(x=10,y=70)
+    day3temp.place(x=2,y=70)
+
+    tempday3 = json_data['daily'][2]['temp']['day']
+    tempnight3 = json_data['daily'][2]['temp']['night']
+
+    day3temp.config(text=f"Day:{tempday3}\n Night:{tempnight3}")
 
     #fourth cell
     fourthdayimage= json_data['daily'][3]['weather'][0]['icon']
@@ -90,7 +105,12 @@ def getWeather():
     fourthimage.image=photo4
 
     day4temp=Label(fourthframe,bg="#282829",fg="#fff")
-    day4temp.place(x=10,y=70)
+    day4temp.place(x=2,y=70)
+
+    tempday4 = json_data['daily'][3]['temp']['day']
+    tempnight4 = json_data['daily'][3]['temp']['night']
+
+    day4temp.config(text=f"Day:{tempday4}\n Night:{tempnight4}")
 
     #fifth cell
     fifthdayimage= json_data['daily'][4]['weather'][0]['icon']
@@ -102,7 +122,12 @@ def getWeather():
     fifthimage.image=photo5
 
     day5temp=Label(fifthframe,bg="#282829",fg="#fff")
-    day5temp.place(x=10,y=70)
+    day5temp.place(x=2,y=70)
+
+    tempday5 = json_data['daily'][4]['temp']['day']
+    tempnight5 = json_data['daily'][4]['temp']['night']
+
+    day5temp.config(text=f"Day:{tempday5}\n Night:{tempnight5}")
 
     #sixth cell
     sixthdayimage= json_data['daily'][5]['weather'][0]['icon']
@@ -114,7 +139,12 @@ def getWeather():
     sixthimage.image=photo6
 
     day6temp=Label(sixthframe,bg="#282829",fg="#fff")
-    day6temp.place(x=10,y=70)
+    day6temp.place(x=2,y=70)
+
+    tempday6 = json_data['daily'][5]['temp']['day']
+    tempnight6 = json_data['daily'][5]['temp']['night']
+
+    day6temp.config(text=f"Day:{tempday6}\n Night:{tempnight6}")
 
     #seventh cell
     seventhdayimage= json_data['daily'][6]['weather'][0]['icon']
@@ -126,7 +156,12 @@ def getWeather():
     seventhimage.image=photo7
 
     day7temp=Label(seventhframe,bg="#282829",fg="#fff")
-    day7temp.place(x=10,y=70)
+    day7temp.place(x=2,y=70)
+
+    tempday7 = json_data['daily'][6]['temp']['day']
+    tempnight7 = json_data['daily'][6]['temp']['night']
+
+    day7temp.config(text=f"Day:{tempday7}\n Night:{tempnight7}")
 
     #days
 
@@ -252,7 +287,7 @@ secondframe=Frame(root,width=70,height=115,bg="#282829")
 secondframe.place(x=305,y=325)
 
 day2=Label(secondframe,bg="#282829",fg="#fff")
-day2.place(x=10,y=5)
+day2.place(x=10 ,y=5)
 
 secondimage=Label(secondframe,bg="#282829")
 secondimage.place(x=7,y=20)
