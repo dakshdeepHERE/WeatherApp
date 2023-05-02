@@ -47,26 +47,43 @@ def getWeather():
     d.config(text=(description))
 
     #first cell
+    firstdayimage= json_data['daily'][0]['weather'][0]['icon']
 
     #second cell
+    seconddayimage= json_data['daily'][1]['weather'][0]['icon']
 
     #third cell
+    thirddayimage= json_data['daily'][2]['weather'][0]['icon']
 
     #fourth cell
+    fourthdayimage= json_data['daily'][3]['weather'][0]['icon']
 
     #fifth cell
+    fifthdayimage= json_data['daily'][4]['weather'][0]['icon']
 
     #sixth cell
+    sixthdayimage= json_data['daily'][5]['weather'][0]['icon']
 
     #seventh cell
+    seventhdayimage= json_data['daily'][6]['weather'][0]['icon']
 
     #days
 
     first = datetime.now()
     day1.config(text=first.strftime("%A"))
 
+    photo1 = ImageTk.PhotoImage(file=f"icon/{firstdayimage}@2x.png")
+    firstimage.config(image=photo1)
+    firstimage.image=photo1
+
     second = first+timedelta(days=1)
     day2.config(text=second.strftime("%A"))
+
+    img=(Image.open(f"icon/{seconddayimage}@2x.png"))
+    resized_image= img.resize((50,50))
+    photo2 = ImageTk.PhotoImage(resized_image)
+    secondimage.config(image=photo2)
+    secondimage.image=photo2
 
     third = first+timedelta(days=2)
     day3.config(text=third.strftime("%A"))
@@ -176,18 +193,27 @@ firstframe.place(x=35,y=315)
 day1=Label(firstframe,font="arial 20",bg="#282829",fg="#fff")
 day1.place(x=100,y=5)
 
+firstimage=Label(firstframe,bg="#282829")
+firstimage.place(x=1,y=15)
+
 #second cell
 secondframe=Frame(root,width=70,height=115,bg="#282829")
 secondframe.place(x=305,y=325)
 
 day2=Label(secondframe,bg="#282829",fg="#fff")
 day2.place(x=10,y=5)
+
+secondimage=Label(secondframe,bg="#282829")
+secondimage.place(x=7,y=20)
 #third cell
 thirdframe=Frame(root,width=70,height=115,bg="#282829")
 thirdframe.place(x=405,y=325)
 
 day3=Label(thirdframe,bg="#282829",fg="#fff")
-day2.place(x=10,y=5)
+day3.place(x=10,y=5)
+
+thirdimage=Label(thirdframe,bg="#282829")
+thirdimage.place(x=7,y=20)
 
 #fourth cell
 fourthframe=Frame(root,width=70,height=115,bg="#282829")
@@ -196,12 +222,18 @@ fourthframe.place(x=505,y=325)
 day4=Label(fourthframe,bg="#282829",fg="#fff")
 day4.place(x=10,y=5)
 
+fourthimage=Label(fourthframe,bg="#282829")
+fourthimage.place(x=7,y=20)
+
 #fifth cell
 fifthframe=Frame(root,width=70,height=115,bg="#282829")
 fifthframe.place(x=605,y=325)
 
 day5=Label(fifthframe,bg="#282829",fg="#fff")
 day5.place(x=10,y=5)
+
+fifthimage=Label(fifthframe,bg="#282829")
+fifthimage.place(x=7,y=20)
 
 #sixth cell
 sixthframe=Frame(root,width=70,height=115,bg="#282829")
@@ -210,12 +242,18 @@ sixthframe.place(x=705,y=325)
 day6=Label(sixthframe,bg="#282829",fg="#fff")
 day6.place(x=10,y=5)
 
+sixthimage=Label(sixthframe,bg="#282829")
+sixthimage.place(x=7,y=20)
+
 #seventh cell 
 seventhframe=Frame(root,width=70,height=115,bg="#282829")
 seventhframe.place(x=805,y=325)
 
 day7=Label(seventhframe,bg="#282829",fg="#fff")
 day7.place(x=10,y=5)
+
+seventhimage=Label(seventhframe,bg="#282829")
+seventhimage.place(x=7,y=20)
 
 
 root.mainloop()
