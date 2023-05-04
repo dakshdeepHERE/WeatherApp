@@ -33,6 +33,7 @@ def getWeather():
     #weather
     api="https://api.openweathermap.org/data/2.5/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=You have yo make you own from OpenWeather Website"
     json_data = requests.get (api).json ()
+    # Get your api id https://openweathermap.org/api You can purchase the daily 1000 requests for free
     #current
     temp = json_data['current']['temp']
     humidity = json_data['current']['humidity']
