@@ -33,16 +33,9 @@ pip install datetime
   - ```
     git clone https://github.com/<your-username>/OpenWeather.git
     ``` 
-- Either create an android emulator or connect a physical device to run the project.
-- Now get to the root of your Flutter project using :
-  - ```
-    cd <name of your root>
-    ```
-- Run this command from the root of your Flutter project or simply press Ctrl + F5:
-  - ```
-    flutter run
-    ```
+- Now you can use any ide that you want to use to run the project in it.
 - The project is all set up now!
+
 # How to Contribute
 Now that the project is properly setup, follow these steps to make your first contribution :
 - Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
