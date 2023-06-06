@@ -31,7 +31,7 @@ pip install datetime
 - First fork this repository from the option given at the top of this page.
 - Now clone the forked repository by running this command in the terminal:
   - ```
-    git clone https://github.com/<your-username>/Vritant.git
+    git clone https://github.com/<your-username>/OpenWeather.git
     ``` 
 - Either create an android emulator or connect a physical device to run the project.
 - Now get to the root of your Flutter project using :
@@ -55,7 +55,7 @@ Now that the project is properly setup, follow these steps to make your first co
       
   - For example:
     - ```
-      git clone https://github.com/your_username/Vritant.git
+      git clone https://github.com/your_username/WeatherApp.git
       ```
 - Now create a branch using the 'git switch' command in repository directory:
   -   ```
